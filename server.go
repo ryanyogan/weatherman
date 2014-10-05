@@ -13,7 +13,7 @@ import (
 const (
 	googleGeocodeURL = "http://maps.google.com/maps/api/geocode/json"
 	forecastURL      = "https://api.forecast.io/forecast/15c0e44bcb77e03a5c97bf11e4d02eea/"
-	rootAssetPath    = "/Users/ryanyogan/projects/weatherman"
+	rootAssetPath    = "/home/ryan/sites/ryanyogan.com/weatherman"
 )
 
 type Location struct {
