@@ -4,7 +4,9 @@
 
 function getFormattedTemperature(temperature) {
     if(temperature) {
-        return <span>{ Math.round(temperature) }<sup>º</sup>C</span>;
+    		// Api comes in as C, let's convert to F
+    		var fTemplVal = (temperature * (9 / 5)) + 32;
+        return <span>{ Math.round(fTemplVal) }<sup>º</sup>F</span>;
     }
     return null;
 }
