@@ -147,10 +147,14 @@ var HourlyOutlookRow = React.createClass({
     componentWillUnmount: function() {
         this.skycons.remove(this.refs.icon.getDOMNode());
     },
+    convertEpochToTime: function(timestamp) {
+    	var time = moment.unix(timestamp);
+    	return time.format('h A');
+    },
     render: function() {
         return (
             <tr>
-                <td className="time"><span className="ww-time-h">{ new Date(this.props.time * 1000).getHours() }</span></td>
+                <td className="time"><span className="ww-time-h">{ this.convertEpochToTime(this.props.time) }</span></td>
                 <td className="icon"><canvas className="ww-cicon-h" ref="icon" width="28" height="28"></canvas></td>
                 <td className="temp"><span className="ww-ctemp-h">{ getFormattedTemperature(this.props.temperature) }</span></td>
                 <td className="summary"><span className="ww-csum-h">{ this.props.summary }</span></td>
